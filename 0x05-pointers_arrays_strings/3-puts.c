@@ -1,4 +1,6 @@
 #include "main.h"
+/**
+ * main*/
 
 void _puts(char *str);
 {
