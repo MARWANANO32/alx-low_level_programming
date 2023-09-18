@@ -1,14 +1,16 @@
 #include "main.h"
 
-int _strlen(char *s)
+/**
+ * _puts - prints a string to stdout
+ * @str: pointer to the string to print
+ */
+void _puts(char *str)
 {
 	int i;
 
-	i = 0;
-
-	while (s[i] != '\n')
+	for (i = 0; str[i] != '\0'; i++)
 	{
-		i++;
+		_putchar(str[i]);
 	}
-	return (i);
+	_putchar('\n');
 }
