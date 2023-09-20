@@ -1,5 +1,4 @@
 #include "main.h"
-#include <string.h>
 
 /**
  * _strcmp - compares two strings
@@ -9,19 +8,16 @@
  * Return: less than 0 if s1 is less than s2, 0 if they're equal,
  * more than 0 if s1 is greater than s2
  */
-
 int _strcmp(char *s1, char *s2)
 {
-	char *s1;
-	char *s2;
-
-	int cmp = strcmp(*s1, *s2);
-
-	if (cmp > 0)
-		printf("*s1 > *s2\n");
-	else
+	while (*s1 == *s2)
 	{
-		printf("*s1 < *s2\n");
+		if (*s1 == '\0')
+		{
+			return (0);
+		}
+		s1++;
+		s2++;
 	}
-	return (*s1, *s2);
+	return (*s1 - *s2);
 }
