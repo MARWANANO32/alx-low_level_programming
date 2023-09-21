@@ -32,3 +32,11 @@ void print_number(int n)i
 		rev_n /= 10;
 	}
 }
+
+int main(void)
+{
+	int n = 42;
+
+	print_integer(n);
+	_putchar('\n');
+}
