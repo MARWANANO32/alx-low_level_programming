@@ -15,6 +15,7 @@ void print_number(int n)
 	} else
 	{
 		n1 = n;
+		return (0);
 	}
 
 	if (n1 / 10)
