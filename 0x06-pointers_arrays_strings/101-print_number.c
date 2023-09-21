@@ -4,21 +4,31 @@
  * print_number - prints an integer;
  * @n: integer to be printed;
  */
-void print_number(int n)
+void print_number(int n)i
 {
-	unsigned int n1;
+	int = n;
 
 	if (n < 0)
 	{
-		n1 = -n;
 		_putchar('-');
-	} else
+		n = -n;
+	}
+	if (n == 0)
 	{
-		n1 = n;
+		_putchar('0');
+		return;
 	}
 
-	if (n1 / 10)
-		print_number(n1 / 10);
+	int rev_n = 0;
 
-	_putchar((n1 % 10) + '0');
+	while (n > 0)
+	{
+		rev_n = rev_n * 10 + n % 10;
+		n /= 10;
+	}
+	while (rev_n > 0)
+	{
+		_putchar(rev_n % 10 + '0');
+		rev_n /= 10;
+	}
 }
