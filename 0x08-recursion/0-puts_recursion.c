@@ -4,7 +4,9 @@
 
 void _puts_recursion(char *s);
 {
-	char *s;
+	int i;
+
+	s = &i;
 
 	puts(*s);
 }
