@@ -18,10 +18,10 @@ char *create_array(unsigned int size, char c)
 	{
 		return (NULL);
 	}
-
-	for (a = 0; a < size; size--)
+	for (a = 0; a < size; a++)
 	{
 		i[size] = c;
+		size--;
 	}
 	return (i);
 }
