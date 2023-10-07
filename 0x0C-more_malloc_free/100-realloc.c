@@ -6,15 +6,14 @@
  * @new_size: the new bytes in memory
  * @old_size: the old bytes in memory
  *
- * Return: pointer to the newly allocated memory block
+ * Return: ptr
+ * if new_size == old_size, returns ptr without changes.
+ * if malloc fails, returns NULL.
  */
 
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
-	char *ptr;
 	unsigned int i;
-
-	char *mar
 
 	if (new_size > old_size)
 	{
@@ -38,5 +37,5 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	}
 	mar = ptr;
 
-
+	return (ptr);
 }
