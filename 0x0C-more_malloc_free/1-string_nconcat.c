@@ -12,12 +12,14 @@
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	char str1[6] = "hello";
-	char str2[] = "world";
+	unsigned int i = 0, j = 0, str1 = 0, str2 = 0;
 
-	void *ptr
+	char *ptr
 
-	strcat(str1, str2);
+	if (n < str2)
+		s = malloc(sizeof(char) * (str2 + n + 1));
+	else
+		s = malloc(sizeof(char) * (str1 + str2 + 1));
 
 	if (ptr == NULL)
 	{
