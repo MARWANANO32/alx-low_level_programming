@@ -34,14 +34,17 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	}
 	if (ptr == NULL)
 	{
-		return (NULL);
-	}
-	if (ptr == NULL)
-	{
 		return(malloc(new_size));
 	}
+
 	ptr1 = malloc(new_size);
+	
+	if (ptr == NULL)
+        {
+                return (NULL);
+        }
 	mar = ptr1;
 
 	return (ptr1);
+	free (ptr);
 }
