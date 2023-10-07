@@ -4,17 +4,13 @@
 
 void *malloc_checked(unsigned int b)
 {
-	int *ptr = (int *) malloc(size * sizeof(int));
+	int *ptr = (int *) malloc(size * sizeof(b));
 	int i;
 
 	if (ptr == NULL)
 	{
         printf("Memory allocation failed\n");
-        exit(1);
-	}
-	for (int i = 0; i < b; i++)
-	{
-        ptr[i] = i + 1;
+        exit(98);
 	}
 	return ptr;
 }
