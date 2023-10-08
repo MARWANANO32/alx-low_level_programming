@@ -28,6 +28,10 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	{
 		return (ptr);
 	}
+	if (mar == NULL)
+	{
+		return (NULL);
+	}
 	if (ptr == NULL)
 	{
 		return(malloc(new_size));
