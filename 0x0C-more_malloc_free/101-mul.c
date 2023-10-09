@@ -1,6 +1,7 @@
-#include "main.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include "main.h"
+
 /**
  * is_digit - checks if a string contains a non-digit char
  * @s: string to be evaluated
@@ -19,6 +20,7 @@ int is_digit(char *s)
 	}
 	return (1);
 }
+
 /**
  * _strlen - returns the length of a string
  * @s: string to evaluate
@@ -35,6 +37,16 @@ int _strlen(char *s)
 	}
 	return (a);
 }
+
+/**
+ * errors - handles errors for main
+ */
+void errors(void)
+{
+	printf("Error\n");
+	exit(98);
+}
+
 /**
  * main - multiplies two positive numbers
  * @argc: number of arguments
@@ -44,42 +56,42 @@ int _strlen(char *s)
  */
 int main(int argc, char *argv[])
 {
-	char *mr1, *mr2;
-	int le1, le2, le, b, carry, digit1, digit2, *result, c = 0;
+	char *s1, *s2;
+	int len1, len2, len, i, carry, digit1, digit2, *result, a = 0;
 
-	mr1 = argv[1], mr2 = argv[2];
-	if (argc != 3 || !is_digit(mr1) || !is_digit(mr2))
+	s1 = argv[1], s2 = argv[2];
+	if (argc != 3 || !is_digit(s1) || !is_digit(s2))
 		errors();
-	le1 = _strlen(mr1);
-	le2 = _strlen(mr2);
-	le = le1 + le2 + 1;
-	result = malloc(sizeof(int) * le);
+	len1 = _strlen(s1);
+	len2 = _strlen(s2);
+	len = len1 + len2 + 1;
+	result = malloc(sizeof(int) * len);
 	if (!result)
 		return (1);
-	for (b = 0; b <= le1 + le2; b++)
-		result[b] = 0;
-	for (le1 = le1 - 1; le1 >= 0; le1--)
+	for (i = 0; i <= len1 + len2; i++)
+		result[i] = 0;
+	for (len1 = len1 - 1; len1 >= 0; len1--)
 	{
-		digit1 = mr1[le1] - '0';
+		digit1 = s1[len1] - '0';
 		carry = 0;
-		for (le2 = _strlen(mr2) - 1; le2 >= 0; le2--)
+		for (len2 = _strlen(s2) - 1; len2 >= 0; len2--)
 		{
-			digit2 = mr2[le2] - '0';
-			carry += result[le1 + le2 + 1] + (digit1 * digit2);
-			result[le1 + le2 + 1] = carry % 10;
+			digit2 = s2[len2] - '0';
+			carry += result[len1 + len2 + 1] + (digit1 * digit2);
+			result[len1 + len2 + 1] = carry % 10;
 			carry /= 10;
 		}
 		if (carry > 0)
-			result[le1 + le2 + 1] += carry;
+			result[len1 + len2 + 1] += carry;
 	}
-	for (b = 0; b < le - 1; b++)
+	for (i = 0; i < len - 1; i++)
 	{
-		if (result[b])
-			c = 1;
-		if (c)
-			_putchar(result[b] + '0');
+		if (result[i])
+			a = 1;
+		if (a)
+			_putchar(result[i] + '0');
 	}
-	if (!c)
+	if (!a)
 		_putchar('0');
 	_putchar('\n');
 	free(result);
