@@ -2,11 +2,10 @@
 #include <stdarg.h>
 
 /**
- * *sum_them_all - function that returns the sum of all its parameters.
- * @n: the constant number of bytes
- *
- * return: 0 or sum
- */
+ * sum_them_all - sum all the input parameters
+ * @n: const unsigned integer
+ * Return: 0 or sum
+*/
 
 int sum_them_all(const unsigned int n, ...)
 {
