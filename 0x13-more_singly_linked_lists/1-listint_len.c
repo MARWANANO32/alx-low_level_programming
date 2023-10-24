@@ -1,5 +1,5 @@
 #include "lists.h"
-
+#include <stdio.h>
 /**
  * *listint_len - function that returns the number of elements in a linked
  * @h: the const pointer
