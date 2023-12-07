@@ -1,21 +1,30 @@
-#!/usr/bin/python3
+#include "lists.h"
 
-def safe_print_list(my_list=[], x=0):
-    """Print x elememts of a list.
+/**
+ * print_dlistint - prints all the elements of a
+ * dlistint_t list
+ *
+ * @h: head of the list
+ * Return: the number of nodes
+ */
+size_t print_dlistint(const dlistint_t *h)
+{
+	int count;
 
-    Args:
-        my_list (list): The list to print elements from.
-        x (int): The number of elements of my_list to print.
+	count = 0;
 
-    Returns:
-        The number of elements printed.
-    """
-    ret = 0
-    for i in range(x):
-        try:
-            print("{}".format(my_list[i]), end="")
-            ret += 1
-        except IndexError:
-            break
-    print("")
-    return (ret)
+	if (h == NULL)
+		return (count);
+
+	while (h->prev != NULL)
+		h = h->prev;
+
+	while (h != NULL)
+	{
+		printf("%d\n", h->n);
+		count++;
+		h = h->next;
+	}
+
+	return (count);
+}

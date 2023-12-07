@@ -1,17 +1,29 @@
-#!/usr/bin/python3
+#include "lists.h"
 
-def safe_print_integer(value):
-    """Print an integer with "{:d}".format().
+/**
+ * dlistint_len - returns the number of elements in
+ * a double linked list
+ *
+ * @h: head of the list
+ * Return: the number of nodes
+ */
+size_t dlistint_len(const dlistint_t *h)
+{
+	int count;
 
-    Args:
-        value (int): The integer to print.
+	count = 0;
 
-    Returns:
-        If a TypeError or ValueError occurs - False.
-        Otherwise - True.
-    """
-    try:
-        print("{:d}".format(value))
-        return (True)
-    except (TypeError, ValueError):
-        return (False)
+	if (h == NULL)
+		return (count);
+
+	while (h->prev != NULL)
+		h = h->prev;
+
+	while (h != NULL)
+	{
+		count++;
+		h = h->next;
+	}
+
+	return (count);
+}
